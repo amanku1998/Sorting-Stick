@@ -11,6 +11,7 @@ namespace Gameplay
         class StickCollectionModel;
         struct Stick;
         enum class SortType;
+        enum class SortState;
 
         class StickCollectionController
         {

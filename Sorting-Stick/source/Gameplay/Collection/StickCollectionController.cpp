@@ -235,7 +235,7 @@ namespace Gameplay
 
 			if (sort_state == SortState::SORTING)
 			{
-				sound->playSound(SoundType::SCREAM);
+				//sound->playSound(SoundType::SCREAM);
 			}
 		}
 
