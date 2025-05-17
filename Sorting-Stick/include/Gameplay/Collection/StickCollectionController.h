@@ -20,6 +20,8 @@ namespace Gameplay
 
             std::vector<Stick*> sticks;
             SortType sort_type;
+            SortState sort_state;
+            int color_delay;
 
             std::thread sort_thread;
 
@@ -44,6 +46,11 @@ namespace Gameplay
             void processSortThreadState();
 
             bool isCollectionSorted();
+
+            void processBubbleSort();
+            void sortElements();
+            void setCompletedColor();
+
             void destroy();
 
         public:
