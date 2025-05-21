@@ -137,27 +137,15 @@ namespace Gameplay
 
 		void StickCollectionController::reset()
 		{
-			current_operation_delay = 0;
 			color_delay = 0;
+			current_operation_delay = 0;
+			sort_state = SortState::NOT_SORTING;
+
 			if (sort_thread.joinable()) sort_thread.join();
 
-			sort_state = SortState::NOT_SORTING;
 			shuffleSticks();
 			resetSticksColor();
 			resetVariables();
-		}
-
-		void StickCollectionController::sortElements(SortType sort_type)
-		{
-			current_operation_delay = collection_model->operation_delay;
-			this->sort_type = sort_type;
-
-			switch (sort_type)
-			{
-				case Gameplay::Collection::SortType::BUBBLE_SORT:
-					sort_thread = std::thread(&StickCollectionController::processBubbleSort, this);
-					break;
-			}
 		}
 
 		bool StickCollectionController::isCollectionSorted()
@@ -239,10 +227,20 @@ namespace Gameplay
 			}
 		}
 
-		void StickCollectionController::sortElements()
+		void StickCollectionController::sortElements(SortType sort_type)
 		{
+			current_operation_delay = collection_model->operation_delay;
 			color_delay = collection_model->initial_color_delay;
+			this->sort_type = sort_type;
 			sort_state = SortState::SORTING;
+
+			switch (sort_type)
+			{
+			case Gameplay::Collection::SortType::BUBBLE_SORT:
+				time_complexity = "O(n^2)";
+				sort_thread = std::thread(&StickCollectionController::processBubbleSort, this);
+				break;
+			}
 		}
 
 		void StickCollectionController::destroy()

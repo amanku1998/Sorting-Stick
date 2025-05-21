@@ -49,7 +49,6 @@ namespace Gameplay
             bool isCollectionSorted();
 
             void processBubbleSort();
-            void sortElements();
             void setCompletedColor();
 
             void destroy();
