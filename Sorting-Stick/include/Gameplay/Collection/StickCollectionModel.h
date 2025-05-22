@@ -24,10 +24,10 @@ namespace Gameplay
         class StickCollectionModel
         {
         public:
-            int number_of_elements = 50;
+            int number_of_elements = 100;
             const float max_element_height = 820.f;
             float elements_spacing = 25.f; //acttual amount of spacing between sticks
-            float space_percentage = 0.40f; //the percentage of the screen space allocated to spacing (0 - 1)
+            float space_percentage = 0.0f; //the percentage of the screen space allocated to spacing (0 - 1)
             const float element_y_position = 1020.f;
 
             const sf::Color element_color = sf::Color::White;
@@ -36,8 +36,8 @@ namespace Gameplay
             const sf::Color selected_element_color = sf::Color::Blue;
             const sf::Color temporary_processing_color = sf::Color::Yellow;
 
-            const long operation_delay = 150;
-            const long initial_color_delay = 40;
+            const long operation_delay = 60;
+            const long initial_color_delay = 30;
 
             StickCollectionModel();
             ~StickCollectionModel();
