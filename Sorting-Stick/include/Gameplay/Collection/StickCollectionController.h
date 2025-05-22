@@ -53,6 +53,8 @@ namespace Gameplay
 
             void processInsertionSort();
 
+            void processSelectionSort();
+
             void destroy();
 
         public:
