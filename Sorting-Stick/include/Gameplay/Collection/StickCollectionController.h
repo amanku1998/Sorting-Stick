@@ -62,6 +62,10 @@ namespace Gameplay
             void inPlaceMergeSort(int left, int right);
             void processMergeSort();
 
+            int partition(int left, int right);
+            void quickSort(int left, int right);
+            void processQuickSort();
+
             void destroy();
 
         public:
