@@ -641,7 +641,6 @@ namespace Gameplay
 				time_complexity = "O(w*(n+k))";
 				sort_thread = std::thread(&StickCollectionController::processRadixSort, this);
 				break;
-
 			}
 		}
 
