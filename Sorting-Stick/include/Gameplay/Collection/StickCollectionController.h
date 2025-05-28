@@ -66,6 +66,11 @@ namespace Gameplay
             void quickSort(int left, int right);
             void processQuickSort();
 
+            void updateStickPosition(int i);
+            void countSort(int exponent);
+            void radixSort();
+            void processRadixSort();
+
             void destroy();
 
         public:
